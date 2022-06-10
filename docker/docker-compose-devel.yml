@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  deepstream-clion-devel-1.0:
+    image: deepstream:6.0.1-clion-devel-1.0
+    container_name: container-deepstream-clion-devel-1.0
+    build:
+        context: .
+        dockerfile: Dockerfile-devel
+    volumes:
+      - ..:/project
+#      - ../../deepstream_python_apps:/opt/nvidia/deepstream/deepstream-6.0/sources/deepstream_python_apps
+      - /dev/video0:/dev/video0
+#      - /dev/video1:/dev/video1
+      - /etc/localtime:/etc/localtime
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    devices:
+      - /dev/video0:/dev/video0
+#      - /dev/video1:/dev/video1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
+    stdin_open: true
+    tty: true
+
+    environment:
+      - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1

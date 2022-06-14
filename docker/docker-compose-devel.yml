@@ -13,6 +13,7 @@ services:
 #      - /dev/video1:/dev/video1
       - /etc/localtime:/etc/localtime
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - /etc/ssl/certs:/etc/ssl/certs:ro
     devices:
       - /dev/video0:/dev/video0
 #      - /dev/video1:/dev/video1

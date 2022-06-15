@@ -27,5 +27,6 @@ services:
     tty: true
 
     environment:
+      - CUDA_VER=11.4
       - DISPLAY=$DISPLAY
       - QT_X11_NO_MITSHM=1

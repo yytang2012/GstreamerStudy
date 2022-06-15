@@ -53,7 +53,7 @@ link_directories(
 
 
 #building target executable
-add_executable(${PROJECT_NAME} deepstream/deepstream-test1/deepstream_test1_app.c)
+add_executable(${PROJECT_NAME} deepstream/deepstream-yolov3-test1/deepstream_yolov3_test1_app.c)
 
 #linking Gstreamer library with target executable
 target_link_libraries(

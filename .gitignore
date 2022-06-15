@@ -1,3 +1,6 @@
 .env
 cmake-build-*
 data
+*.weights
+*.o
+*.so
